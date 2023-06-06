@@ -1,0 +1,52 @@
+phone book in python
+//////////////////////////////////////////////////////////////
+phone_book = {}
+
+def add_contact():
+    name = input("Enter contact name: ")
+    number = input("Enter contact number: ")
+    phone_book[name] = number
+    print("Contact added successfully!")
+
+def find_contact():
+    name = input("Enter contact name: ")
+    if name in phone_book:
+        print(f"Contact found! {name}: {phone_book[name]}")
+    else:
+        print("Contact not found.")
+
+def main():
+    while True:
+        print("\n--- Phone Book ---")
+        print("1. Add Contact")
+        print("2. Find Contact")
+        print("3. Exit")
+        choice = input("Enter your choice (1-3): ")
+
+        if choice == "1":
+            add_contact()
+        elif choice == "2":
+            find_contact()
+        elif choice == "3":
+            break
+        else:
+            print("Invalid choice. Try again.")
+
+if __name__ == "__main__":
+    main()
+//////////////////////////////////////////
+my code explanation
+//////////////////////////
+This code represents a simple phone book program. Here's a breakdown of how it works:
+
+1. The `phone_book` variable is initialized as an empty dictionary to store contacts.
+
+2. The `add_contact()` function is defined. It prompts the user to enter a contact name and number. The function then adds the name and number as a key-value pair to the `phone_book` dictionary. Finally, it prints a success message.
+
+3. The `find_contact()` function is defined. It prompts the user to enter a contact name and checks if the name exists in the `phone_book` dictionary. If the name is found, it prints the contact's name and number. If the name is not found, it prints a message indicating that the contact was not found.
+
+4. The `main()` function is defined. It contains a while loop that repeatedly displays a menu and prompts the user to enter a choice. The menu provides options to add a contact, find a contact, or exit the program. Based on the user's input, the corresponding function (`add_contact()`, `find_contact()`) is called, or the loop is broken to exit the program.
+
+5. The `__name__ == "__main__"` condition ensures that the `main()` function is executed only when the script is run directly and not when imported as a module.
+
+To use this code, you can run it as a Python script. It will display the phone book menu and allow you to interactively add and search for contacts until you choose to exit the program.
